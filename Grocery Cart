@@ -1,0 +1,27 @@
+menu = {"pizza": 3.00,
+        "nachos": 4.50,
+        "popcorn": 6.00,
+        "fries": 2.50,
+        "chips": 1.00,
+        "pretzel": 3.50,
+        "soda": 3.00,
+        "lemonade": 4.25}
+cart = {}
+total = 0
+
+for key in menu:
+    picked = input("Enter a food item or q to quit: ")
+    if picked == "q":
+        break
+    elif picked not in menu:
+        print("Sorry, I don't have that food item")
+    else:
+        cart.update({picked: menu[picked]})
+print("-----------------")
+print("Items bought")
+print("-----------------")
+
+for x, y in cart.items():
+    print(f"{x} £{y}")
+print("-----------------")
+print(f"Total amount: £{sum(cart.values())}")
